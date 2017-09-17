@@ -17,7 +17,7 @@ public class Keywords {
 		} catch (NoSuchElementException e) {
 			System.out.println("Element Not Found while entering " + text + " on locator -> " + locator);
 			System.out.println("Exception thrown --> " + e);
-		}
+		}-
 	}
 
 	public void click_element(WebDriver driver, String locator) {
