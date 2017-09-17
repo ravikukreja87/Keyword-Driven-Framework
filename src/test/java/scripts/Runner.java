@@ -17,6 +17,5 @@ public class Runner {
 		System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
 		driver = new ChromeDriver();
 		exec.keyword_executor();
-		driver.quit();
 	}
 }
