@@ -16,8 +16,8 @@ public class Keywords {
 			driver.findElement(By.xpath(locator)).sendKeys(text);
 		} catch (NoSuchElementException e) {
 			System.out.println("Element Not Found while entering " + text + " on locator -> " + locator);
-			System.out.println("Exception thrown --> " + e);
-		}-
+			System.out.println("Exception thrown ---> " + e);
+		}
 	}
 
 	public void click_element(WebDriver driver, String locator) {
