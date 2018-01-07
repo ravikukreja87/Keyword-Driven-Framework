@@ -71,8 +71,15 @@ public class ExecuteKeywords extends Keywords {
 				quit_browser(driver);
 				break;
 				
+			case "select_dd":
+				select_dd(driver, locator, text);
+				break;
+				
+			case "scroll_down":
+				scrollDown(driver);
+			
 			default:
-				System.out.println("Enter Valid Keyword");
+				System.out.println("Enter Valid Keyword. Entered value = " + keyword);
 				break;
 			}
 

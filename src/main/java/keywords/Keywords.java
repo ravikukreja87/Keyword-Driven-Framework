@@ -2,9 +2,11 @@ package keywords;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import scripts.Runner;
 
@@ -43,6 +45,7 @@ public class Keywords {
 
 	public String get_text(WebDriver driver, String locator) {
 		try {
+			System.out.println(driver.findElement(By.xpath(locator)).getText());
 			return driver.findElement(By.xpath(locator)).getText();
 		} catch (NoSuchElementException e) {
 			System.out.println("Element Not Found for reading any text on element with locator -> " + locator);
@@ -111,4 +114,13 @@ public class Keywords {
 		}
 	}
 
+	public void select_dd(WebDriver driver, String locator, String text) {
+		Select s = new Select(driver.findElement(By.xpath(locator)));
+		s.selectByVisibleText(text);
+	}
+
+	public void scrollDown(WebDriver driver) {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("scroll(0, 300);");
+	}
 }
