@@ -2,6 +2,7 @@ package scripts;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import keywords.ExecuteKeywords;
 
@@ -11,8 +12,9 @@ public class Runner {
 	public static WebDriver getDriver() {
 		return driver;
 	}
-
-	public static void main(String[] args) throws Exception {
+	
+	@Test
+	public void testThis() throws Exception {
 		ExecuteKeywords exec = new ExecuteKeywords();
 		System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
 		driver = new ChromeDriver();

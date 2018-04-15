@@ -77,6 +77,11 @@ public class ExecuteKeywords extends Keywords {
 				
 			case "scroll_down":
 				scrollDown(driver);
+				break;
+				
+			case "wait":
+				wait_time(Integer.parseInt(text));
+				break;
 			
 			default:
 				System.out.println("Enter Valid Keyword. Entered value = " + keyword);

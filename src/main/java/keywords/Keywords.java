@@ -5,10 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import scripts.Runner;
 
 public class Keywords {
 
@@ -86,6 +84,7 @@ public class Keywords {
 
 	public String get_attribute(WebDriver driver, String locator, String attribute) {
 		try {
+			System.out.println(driver.findElement(By.xpath(locator)).getAttribute(attribute));
 			return driver.findElement(By.xpath(locator)).getAttribute(attribute);
 		} catch (NoSuchElementException e) {
 			System.out.println("Element not found with locator --> " + locator);
@@ -106,9 +105,9 @@ public class Keywords {
 		driver.quit();
 	}
 
-	public void wait_time(Long wait) {
+	public void wait_time(int i) {
 		try {
-			Thread.sleep(wait);
+			Thread.sleep(i);
 		} catch (InterruptedException e) {
 
 		}
